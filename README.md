@@ -10,4 +10,5 @@ ORIGINALS
 Our Work.
 
 ![Aperçu](/preview/preview.png)
+![Aperçu](/preview/device-mockup_1.5x_postspark_2025-11-11_15-33-12.png)
 
