@@ -1,3 +1,4 @@
+import 'package:application/transfer_money.dart';
 import 'package:flutter/material.dart';
 
 class ActionButtons extends StatelessWidget {
@@ -18,10 +19,25 @@ class ActionButtons extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ActionButton(icon: Icons.account_balance, label: 'Depot'),
-            ActionButton(icon: Icons.swap_horiz_rounded, label: 'Transfert'),
-            ActionButton(icon: Icons.attach_money_rounded, label: 'Retrait'),
-            ActionButton(icon: Icons.apps_sharp, label: 'Plus'),
+            ActionButton(
+              icon: Icons.account_balance,
+              label: 'Depot',
+              onTap: () {},
+            ),
+            ActionButton(
+              icon: Icons.swap_horiz_rounded,
+              label: 'Transfert',
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TransferMoney()),
+              ),
+            ),
+            ActionButton(
+              icon: Icons.attach_money_rounded,
+              label: 'Retrait',
+              onTap: () {},
+            ),
+            ActionButton(icon: Icons.apps_sharp, label: 'Plus', onTap: () {}),
           ],
         ),
       ),
@@ -32,7 +48,13 @@ class ActionButtons extends StatelessWidget {
 class ActionButton extends StatelessWidget {
   final IconData icon;
   final String label;
-  const ActionButton({super.key, required this.icon, required this.label});
+  final void Function()? onTap;
+  const ActionButton({
+    super.key,
+    required this.icon,
+    required this.label,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +62,7 @@ class ActionButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton.outlined(
-          onPressed: () {},
+          onPressed: onTap,
           icon: Icon(icon),
           color: Color.fromARGB(255, 16, 80, 98),
         ),

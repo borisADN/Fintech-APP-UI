@@ -1,3 +1,4 @@
+import 'package:application/activity_page.dart';
 import 'package:application/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _MainPageState extends State<MainPage> {
     const HomePage(),
     const Center(child: Text('Cards Page', style: TextStyle(fontSize: 50))),
     const Center(child: Text('Scan Page', style: TextStyle(fontSize: 50))),
-    const Center(child: Text('Activity Page', style: TextStyle(fontSize: 50))),
+    const ActivityPage(),
     const Center(child: Text('Profile Page', style: TextStyle(fontSize: 50))),
   ];
 
